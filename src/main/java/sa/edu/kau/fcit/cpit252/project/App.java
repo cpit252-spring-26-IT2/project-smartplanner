@@ -32,6 +32,12 @@ public class App {
         JButton addTask = new JButton("+");
         addTask.setBounds(1340,20,60,20);
 
+        JButton deleteTask = new JButton("-");
+        deleteTask.setBounds(1260,20,60,20);
+
+        JButton editTask = new JButton("Edit Task");
+        editTask.setBounds(1150,20,80,20);
+
         addTask.addActionListener(e -> {
             JFrame newTask = new JFrame("New Task");
             newTask.setSize(600,600);
@@ -98,6 +104,8 @@ public class App {
         });
 
         mainFrame.add(addTask);
+        mainFrame.add(deleteTask);
+        mainFrame.add(editTask);
         mainFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         mainFrame.setResizable(true);
         mainFrame.setLocationRelativeTo(null);
