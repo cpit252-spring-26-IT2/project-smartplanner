@@ -10,22 +10,18 @@ import java.time.format.DateTimeFormatter;
 public class App {
     public static void main(String[] args) {
 
-        //Task task1 = TaskFactory.createTask("Study","cpit252","solve Lab3 Factory Method",3,LocalDateTime.of(2023,3,4,12,30));
-        //Task task2 = TaskFactory.createTask("Break","FreeTime","3-4hours free",4,LocalDateTime.of(2026,3,4,1,4));
-        //Task task3 = TaskFactory.createTask("Entertainment","Gaming","Beat The Boss",1,LocalDateTime.of(2025,3,4,4,6));
-        TaskManager manager = new TaskManager();
-        //TaskManager manager = new TaskManager();
-        //manager.addTask(task1);
-        //manager.addTask(task2);
-        //manager.addTask(task3);
 
-        System.out.println(LocalDateTime.now().getYear());
 
-        //manager.displayAllTasks();
+        TaskFacade manager = new TaskFacade();
+
+
+        //System.out.println(LocalDateTime.now().getYear());
+
+
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
 
-        // Main App frame
+        // Main App frame   --------------------------------------------------------------------------------------------
         JFrame mainFrame = new JFrame("SmartPlanner");
         mainFrame.setSize(800,600);
 
@@ -38,11 +34,16 @@ public class App {
         JButton editTask = new JButton("Edit Task");
         editTask.setBounds(1150,20,80,20);
 
+        // End of Main App frame ---------------------------------------------------------------------------------------
+
+
+        // Add Task Button (frame & Logic) -----------------------------------------------------------------------------
+
         addTask.addActionListener(e -> {
             JFrame newTask = new JFrame("New Task");
             newTask.setSize(600,600);
 
-            String[] taskTypes = {"Study", "Break", "Entertainment"};
+            String[] taskTypes = {"Study", "Free", "Entertainment"};
             JComboBox<String> typeComboBox = new JComboBox<>(taskTypes);
             typeComboBox.setBounds(105, 50, 150, 25);
             String selectedType = (String) typeComboBox.getSelectedItem();
@@ -98,10 +99,13 @@ public class App {
                 Task task = TaskFactory.createTask((String)typeComboBox.getSelectedItem(),nameField.getText(),description.getText(),Integer.parseInt(priorityField.getText()),date);
 
                 manager.addTask(task);
-                manager.displayAllTasks();
+                manager.displayTasks();
 
             });
         });
+        // End of Add Task Button frame & Logic ------------------------------------------------------------------------
+
+
 
         mainFrame.add(addTask);
         mainFrame.add(deleteTask);

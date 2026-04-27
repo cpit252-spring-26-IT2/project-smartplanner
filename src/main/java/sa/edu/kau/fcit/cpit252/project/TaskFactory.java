@@ -12,8 +12,8 @@ public class TaskFactory {
         if(taskType.equalsIgnoreCase("Study")){
             return new StudyTask(taskName,description,priority,dueDate);
         }
-        if(taskType.equalsIgnoreCase("Break")){
-            return new BreakTask(taskName,description,priority,dueDate);
+        if(taskType.equalsIgnoreCase("Free")){
+            return new FreeTask(taskName,description,priority,dueDate);
         }
         return null;
 

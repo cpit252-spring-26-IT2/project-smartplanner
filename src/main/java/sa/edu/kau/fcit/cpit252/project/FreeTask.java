@@ -1,6 +1,6 @@
 package sa.edu.kau.fcit.cpit252.project;
 import java.time.LocalDateTime;
-public class BreakTask implements Task{
+public class FreeTask implements Task{
 
     String taskName;
     String description;
@@ -8,7 +8,7 @@ public class BreakTask implements Task{
     LocalDateTime dueDate;
 
 
-    public BreakTask(String taskName,String description, int priority, LocalDateTime dueDate){
+    public FreeTask(String taskName,String description, int priority, LocalDateTime dueDate){
 
         this.taskName = taskName;
         this.description = description;
