@@ -1,12 +1,14 @@
-# Project Name
+# SmartPlanner
 
 ## Description
-
+SmartPlanner is an app designed to help students manage their tasks, study schedules, and leisure activities effectively. The app provides automatic task scheduling, reminders, and task priority management.
 
 
 ## Features
-- A
-- B
+- Manual or automatic task scheduling
+- Weekly summary generation
+- Reminder notifications
+- Priority task setting
 
 
 ## Usage
