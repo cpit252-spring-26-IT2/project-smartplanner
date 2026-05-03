@@ -3,6 +3,8 @@ import java.time.LocalDateTime;
 import javax.swing.*;
 import java.awt.*;
 import java.time.format.DateTimeFormatter;
+import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.FlatDarkLaf;
 
 /**
  * Hello world!
@@ -10,7 +12,12 @@ import java.time.format.DateTimeFormatter;
 public class App {
     public static void main(String[] args) {
 
-
+        try {
+            FlatDarkLaf.setup();
+            UIManager.put("Button.arc", 25);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         TaskFacade manager = new TaskFacade();
 
@@ -27,12 +34,18 @@ public class App {
 
         JButton addTask = new JButton("+");
         addTask.setBounds(1340,20,60,20);
+        addTask.setBackground(new Color(46, 204, 113));
+        addTask.setForeground(Color.WHITE);
 
         JButton deleteTask = new JButton("-");
         deleteTask.setBounds(1260,20,60,20);
+        deleteTask.setBackground(new Color(180, 50, 50));
+        deleteTask.setForeground(Color.WHITE);
 
         JButton editTask = new JButton("Edit Task");
-        editTask.setBounds(1150,20,80,20);
+        editTask.setBounds(1150,20,100,20);
+        editTask.setBackground(new Color(15, 128, 255));
+        editTask.setForeground(Color.WHITE);
 
         // End of Main App frame ---------------------------------------------------------------------------------------
 
@@ -76,7 +89,12 @@ public class App {
 
             JButton create = new JButton("Create");
             create.setBounds(450,500,100,30);
+            create.setBackground(new Color(15, 128, 255));
+            create.setForeground(Color.WHITE);
 
+            create.addActionListener(e1 -> {
+                newTask.dispose();
+            });
 
 
             newTask.add(create);
@@ -90,6 +108,7 @@ public class App {
             newTask.add(taskName);
             newTask.add(nameField);
             newTask.add(description);
+            newTask.setLocationRelativeTo(null);
             newTask.setLayout(null);
             newTask.setResizable(false);
             newTask.setVisible(true);
