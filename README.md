@@ -23,4 +23,4 @@ To build and run the app, use:
 
 ## License
 
-Pick a project license
+MIT
