@@ -7,6 +7,7 @@ public class FreeTask implements Task{
     int priority ;
     LocalDateTime dueDate;
 
+    private TaskState currentState;
 
     public FreeTask(String taskName,String description, int priority, LocalDateTime dueDate){
 
@@ -15,6 +16,21 @@ public class FreeTask implements Task{
         this.priority = priority;
         this.dueDate = dueDate;
 
+        this.currentState = new Pending();
+
+    }
+
+    public void setState(TaskState state){
+
+        this.currentState = state;
+
+    }
+
+    public TaskState getState(){
+        return this.currentState;
+    }
+    public void updateState(){
+        currentState.updateState(this);
     }
 
     @Override
