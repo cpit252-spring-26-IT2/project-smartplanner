@@ -20,6 +20,46 @@ public class StudyTask implements Task{
         this.currentState = new Pending();
     }
 
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
+
+    public LocalDateTime getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDateTime dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public TaskState getCurrentState() {
+        return currentState;
+    }
+
+    public void setCurrentState(TaskState currentState) {
+        this.currentState = currentState;
+    }
+
     public void setState(TaskState state){
 
         this.currentState = state;
